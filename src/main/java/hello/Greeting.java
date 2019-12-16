@@ -1,17 +1,30 @@
 package hello;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="greetings")
 public class Greeting {
 
-	private final long id;
-	private final String content;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
 
-	public Greeting(long id, String content) {
-		this.id = id;
+	@Column
+	private String content;
+
+	protected Greeting(){ }
+
+	public Greeting(String content) {
 		this.content = content;
 	}
 
 	public long getId() {
 		return id;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public String getContent() {

@@ -7,4 +7,4 @@ build: compile
 	docker build -t hello:latest .
 
 run:
-	docker run -d -p 8080:8080 hello:latest
+	docker run --network=hellonet -d -p 8080:8080 hello:latest
