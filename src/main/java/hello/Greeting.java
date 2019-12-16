@@ -19,6 +19,10 @@ public class Greeting {
 		this.content = content;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public long getId() {
 		return id;
 	}
